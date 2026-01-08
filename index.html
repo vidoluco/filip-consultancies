@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Salinas Construct SRL - Companie de construcții specializată în renovări, instalații electrice, sanitare și finisaje interioare de calitate superioară.">
+    <title>Salinas Construct SRL | Construcții & Renovări Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <img src="assets/identity.png" alt="Salinas Construct - Buildings, Concrete & Structures" class="logo-image">
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Acasă</a></li>
+                <li><a href="#services" class="nav-link">Servicii</a></li>
+                <li><a href="#portfolio" class="nav-link">Portofoliu</a></li>
+                <li><a href="#about" class="nav-link">Despre Noi</a></li>
+                <li><a href="#certifications" class="nav-link">Certificări</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="lang-switcher">
+                    <button class="lang-btn active" data-lang="ro">RO</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2 class="hero-title" data-lang-key="hero.title">Construim Viitorul, Transformăm Prezentul</h2>
+            <p class="hero-subtitle" data-lang-key="hero.subtitle">Specializați în renovări premium, instalații electrice și sanitare, finisaje interioare de excepție</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary" data-lang-key="hero.cta1">Solicită Consultație</a>
+                <a href="#portfolio" class="btn btn-secondary" data-lang-key="hero.cta2">Vezi Proiectele Noastre</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="services.title">Serviciile Noastre</h2>
+                <p class="section-subtitle" data-lang-key="services.subtitle">Soluții complete pentru proiectul dumneavoastră de construcție</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-service="renovation" onclick="openServiceModal('renovation')">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <h3 data-lang-key="services.item1.title">Renovări și Modernizări</h3>
+                    <p data-lang-key="services.item1.desc">Transformăm spații vechi în locuințe moderne și funcționale, cu atenție la fiecare detaliu.</p>
+                    <button class="service-learn-more">
+                        <span data-lang-key="services.learnmore">Detalii Complete</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="service-card" data-service="interior" onclick="openServiceModal('interior')">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                    </div>
+                    <h3 data-lang-key="services.item2.title">Finisaje Interioare</h3>
+                    <p data-lang-key="services.item2.desc">Finisaje premium pentru pereți, podele, tavane - de la gresie și faianță la parchet și tencuieli decorative.</p>
+                    <button class="service-learn-more">
+                        <span data-lang-key="services.learnmore">Detalii Complete</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="service-card" data-service="electrical" onclick="openServiceModal('electrical')">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 data-lang-key="services.item3.title">Instalații Electrice</h3>
+                    <p data-lang-key="services.item3.desc">Proiectare și execuție instalații electrice conforme cu normele în vigoare, de la tablouri la automatizări.</p>
+                    <button class="service-learn-more">
+                        <span data-lang-key="services.learnmore">Detalii Complete</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="service-card" data-service="plumbing" onclick="openServiceModal('plumbing')">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 data-lang-key="services.item4.title">Instalații Sanitare</h3>
+                    <p data-lang-key="services.item4.desc">Sisteme complete de apă și canalizare, instalații termice, centrale, boilere și climatizare.</p>
+                    <button class="service-learn-more">
+                        <span data-lang-key="services.learnmore">Detalii Complete</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="service-card" data-service="roofing" onclick="openServiceModal('roofing')">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h18v18H3z"></path>
+                            <path d="M3 9h18"></path>
+                            <path d="M9 21V9"></path>
+                        </svg>
+                    </div>
+                    <h3 data-lang-key="services.item5.title">Instalații Acoperișuri</h3>
+                    <p data-lang-key="services.item5.desc">Montaj și renovare acoperișuri, jgheaburi, burlane, hidroizolații și sisteme de protecție.</p>
+                    <button class="service-learn-more">
+                        <span data-lang-key="services.learnmore">Detalii Complete</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="service-card" data-service="furniture" onclick="openServiceModal('furniture')">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="10" width="18" height="10" rx="1" ry="1"></rect>
+                            <line x1="6" y1="20" x2="6" y2="23"></line>
+                            <line x1="18" y1="20" x2="18" y2="23"></line>
+                            <path d="M3 10 V7 A2 2 0 0 1 5 5 H19 A2 2 0 0 1 21 7 V10"></path>
+                        </svg>
+                    </div>
+                    <h3 data-lang-key="services.item6.title">Design Interior & Mobilier</h3>
+                    <p data-lang-key="services.item6.desc">Mobilier la comandă și amenajări personalizate pentru fiecare spațiu, cu atenție la detalii și funcționalitate.</p>
+                    <button class="service-learn-more">
+                        <span data-lang-key="services.learnmore">Detalii Complete</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="portfolio.title">Portofoliul Nostru</h2>
+                <p class="section-subtitle" data-lang-key="portfolio.subtitle">Proiecte finalizate cu succes - înainte și după</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all" data-lang-key="portfolio.filter.all">Toate</button>
+                <button class="filter-btn" data-filter="renovation" data-lang-key="portfolio.filter.renovation">Renovări</button>
+                <button class="filter-btn" data-filter="interior" data-lang-key="portfolio.filter.interior">Finisaje</button>
+                <button class="filter-btn" data-filter="electrical" data-lang-key="portfolio.filter.electrical">Electrice</button>
+                <button class="filter-btn" data-filter="plumbing" data-lang-key="portfolio.filter.plumbing">Sanitare</button>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Project 1 - Mock Image -->
+                <div class="portfolio-item" data-category="renovation">
+                    <div class="portfolio-image-container">
+                        <div class="portfolio-image mock-image mock-renovation">
+                            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Living room scene -->
+                                <rect width="400" height="300" fill="#f5f5f5"/>
+                                <!-- Floor -->
+                                <rect y="200" width="400" height="100" fill="#d4a574"/>
+                                <!-- Walls -->
+                                <rect width="400" height="200" fill="#ffffff"/>
+                                <!-- Window -->
+                                <rect x="250" y="40" width="120" height="140" fill="#87CEEB" stroke="#333" stroke-width="3"/>
+                                <line x1="310" y1="40" x2="310" y2="180" stroke="#333" stroke-width="3"/>
+                                <line x1="250" y1="110" x2="370" y2="110" stroke="#333" stroke-width="3"/>
+                                <!-- Sofa -->
+                                <rect x="50" y="150" width="120" height="50" fill="#4a4a4a" rx="5"/>
+                                <rect x="40" y="135" width="140" height="20" fill="#5a5a5a" rx="8"/>
+                                <circle cx="70" cy="195" r="8" fill="#3a3a3a"/>
+                                <circle cx="140" cy="195" r="8" fill="#3a3a3a"/>
+                                <!-- Coffee table -->
+                                <rect x="190" y="170" width="60" height="30" fill="#8B4513" rx="3"/>
+                                <!-- Lamp -->
+                                <line x1="320" y1="200" x2="320" y2="150" stroke="#333" stroke-width="2"/>
+                                <polygon points="300,150 340,150 335,135 305,135" fill="#FFD700"/>
+                                <!-- Text -->
+                                <text x="200" y="280" text-anchor="middle" font-family="Arial" font-size="16" fill="#666">Renovare Completă</text>
+                            </svg>
+                        </div>
+                        <div class="before-after-toggle">
+                            <button class="toggle-btn">Înainte / După</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Renovare Apartament Modern</h3>
+                        <p>Transformare completă apartament 3 camere - finisaje premium, instalații noi</p>
+                        <span class="project-tag">Renovări</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 - Placeholder -->
+                <div class="portfolio-item" data-category="interior">
+                    <div class="portfolio-image-container">
+                        <div class="portfolio-image placeholder">
+                            <div class="placeholder-text">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Imagine Proiect</span>
+                            </div>
+                        </div>
+                        <div class="before-after-toggle">
+                            <button class="toggle-btn">Înainte / După</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Finisaje Baie Luxury</h3>
+                        <p>Gresie, faianță premium, mobilier personalizat și iluminat modern</p>
+                        <span class="project-tag">Finisaje</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 - Placeholder -->
+                <div class="portfolio-item" data-category="electrical">
+                    <div class="portfolio-image-container">
+                        <div class="portfolio-image placeholder">
+                            <div class="placeholder-text">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Imagine Proiect</span>
+                            </div>
+                        </div>
+                        <div class="before-after-toggle">
+                            <button class="toggle-btn">Înainte / După</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Instalație Electrică Smart Home</h3>
+                        <p>Sistem electric complet cu automatizări și control inteligent</p>
+                        <span class="project-tag">Electrice</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 - Placeholder -->
+                <div class="portfolio-item" data-category="renovation">
+                    <div class="portfolio-image-container">
+                        <div class="portfolio-image placeholder">
+                            <div class="placeholder-text">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Imagine Proiect</span>
+                            </div>
+                        </div>
+                        <div class="before-after-toggle">
+                            <button class="toggle-btn">Înainte / După</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Renovare Vilă Contemporană</h3>
+                        <p>Modernizare completă exterior și interior, 4 luni de lucrări</p>
+                        <span class="project-tag">Renovări</span>
+                    </div>
+                </div>
+
+                <!-- Project 5 - Placeholder -->
+                <div class="portfolio-item" data-category="plumbing">
+                    <div class="portfolio-image-container">
+                        <div class="portfolio-image placeholder">
+                            <div class="placeholder-text">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Imagine Proiect</span>
+                            </div>
+                        </div>
+                        <div class="before-after-toggle">
+                            <button class="toggle-btn">Înainte / După</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Sistem Termic Eficient</h3>
+                        <p>Instalare centrală termică, radiatoare și sistem încălzire în pardoseală</p>
+                        <span class="project-tag">Sanitare</span>
+                    </div>
+                </div>
+
+                <!-- Project 6 - Placeholder -->
+                <div class="portfolio-item" data-category="interior">
+                    <div class="portfolio-image-container">
+                        <div class="portfolio-image placeholder">
+                            <div class="placeholder-text">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>Imagine Proiect</span>
+                            </div>
+                        </div>
+                        <div class="before-after-toggle">
+                            <button class="toggle-btn">Înainte / După</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Bucătărie Open-Space</h3>
+                        <p>Design modern cu finisaje premium și mobilier la comandă</p>
+                        <span class="project-tag">Finisaje</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-header">
+                        <h2 class="section-title" data-lang-key="about.title">Despre Salinas Construct</h2>
+                    </div>
+                    <p data-lang-key="about.intro">Suntem o echipă de profesioniști dedicați transformării spațiilor în locuințe moderne, funcționale și de calitate superioară.</p>
+                    <p data-lang-key="about.mission">Cu experiență vastă în domeniul construcțiilor și renovărilor, oferim servicii complete - de la proiectare la finisare, cu accent pe calitate, punctualitate și satisfacția clientului.</p>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>150+</h3>
+                            <p data-lang-key="about.stat1">Proiecte Finalizate</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10+</h3>
+                            <p data-lang-key="about.stat2">Ani Experiență</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>98%</h3>
+                            <p data-lang-key="about.stat3">Clienți Mulțumiți</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image placeholder">
+                    <div class="placeholder-text">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                        <span>Fotografie Echipă</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-section">
+                <h3 class="team-title" data-lang-key="about.team.title">Echipa Noastră</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo placeholder-small">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>Ing. Alexandru Salinas</h4>
+                        <p class="role">Director General & Inginer Șef</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo placeholder-small">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>Maria Popescu</h4>
+                        <p class="role">Manager Proiecte</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo placeholder-small">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>Ion Georgescu</h4>
+                        <p class="role">Maestru Constructor</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo placeholder-small">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>Andrei Dumitrescu</h4>
+                        <p class="role">Electrician Autorizat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="cert.title">Certificări și Parteneri</h2>
+                <p class="section-subtitle" data-lang-key="cert.subtitle">Calitate garantată prin certificări și colaborări de prestigiu</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <h4>ISO 9001:2015</h4>
+                    <p data-lang-key="cert.iso">Sistem Management Calitate</p>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <h4>ANRE</h4>
+                    <p data-lang-key="cert.anre">Autorizație Instalații Electrice</p>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <h4>ISCIR</h4>
+                    <p data-lang-key="cert.iscir">Instalații Termice Certificate</p>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">✓</div>
+                    <h4>Partener Premium</h4>
+                    <p data-lang-key="cert.premium">Materiale de Construcție</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="blog.title">Blog & Știri</h2>
+                <p class="section-subtitle" data-lang-key="blog.subtitle">Ultimele proiecte, tendințe și sfaturi din domeniul construcțiilor</p>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image placeholder">
+                        <div class="placeholder-text">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">15 Ianuarie 2026</span>
+                        <h3>Top 5 Tendințe în Renovări pentru 2026</h3>
+                        <p>Descoperă cele mai noi tendințe în design interior și renovări care vor domina anul acesta...</p>
+                        <a href="#" class="read-more" data-lang-key="blog.readmore">Citește mai mult →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image placeholder">
+                        <div class="placeholder-text">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">10 Ianuarie 2026</span>
+                        <h3>Cum Să Alegi Materialele Potrivite pentru Renovare</h3>
+                        <p>Ghid complet pentru selectarea materialelor de calitate care să reziste în timp...</p>
+                        <a href="#" class="read-more" data-lang-key="blog.readmore">Citește mai mult →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-image placeholder">
+                        <div class="placeholder-text">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-date">5 Ianuarie 2026</span>
+                        <h3>Eficiență Energetică: Economisește prin Instalații Smart</h3>
+                        <p>Descoperă cum sistemele inteligente pot reduce costurile și crește confortul...</p>
+                        <a href="#" class="read-more" data-lang-key="blog.readmore">Citește mai mult →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-lang-key="contact.title">Contactați-ne</h2>
+                <p class="section-subtitle" data-lang-key="contact.subtitle">Suntem aici pentru a transforma visul dumneavoastră în realitate</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Adresă</h4>
+                            <p>Str. Constructorilor nr. 45<br>București, Sector 2, România</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Telefon</h4>
+                            <p>+40 721 234 567<br>+40 732 345 678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>office@salinasconstruct.ro<br>contact@salinasconstruct.ro</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Program</h4>
+                            <p>Luni - Vineri: 08:00 - 18:00<br>Sâmbătă: 09:00 - 14:00</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name" data-lang-key="contact.form.name">Numele Dumneavoastră</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email" data-lang-key="contact.form.email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" required>
+                        <label for="phone" data-lang-key="contact.form.phone">Telefon</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" required>
+                            <option value="" disabled selected data-lang-key="contact.form.service">Selectați serviciul</option>
+                            <option value="renovation">Renovări</option>
+                            <option value="interior">Finisaje Interioare</option>
+                            <option value="electrical">Instalații Electrice</option>
+                            <option value="plumbing">Instalații Sanitare</option>
+                            <option value="roofing">Instalații Acoperișuri</option>
+                            <option value="other">Altele</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea id="message" rows="5" required></textarea>
+                        <label for="message" data-lang-key="contact.form.message">Descrieți proiectul dumneavoastră</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-lang-key="contact.form.submit">Trimite Mesaj</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SALINAS<span>CONSTRUCT</span></h3>
+                    <p data-lang-key="footer.tagline">Construim visuri, creăm realități.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-key="footer.services">Servicii</h4>
+                    <ul>
+                        <li><a href="#services">Renovări</a></li>
+                        <li><a href="#services">Finisaje Interioare</a></li>
+                        <li><a href="#services">Instalații Electrice</a></li>
+                        <li><a href="#services">Instalații Sanitare</a></li>
+                        <li><a href="#services">Instalații Acoperișuri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-key="footer.company">Companie</h4>
+                    <ul>
+                        <li><a href="#about">Despre Noi</a></li>
+                        <li><a href="#portfolio">Portofoliu</a></li>
+                        <li><a href="#certifications">Certificări</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-key="footer.legal">Informații Legale</h4>
+                    <ul>
+                        <li>CUI: RO12345678</li>
+                        <li>J23/1234/2015</li>
+                        <li><a href="#">Termeni și Condiții</a></li>
+                        <li><a href="#">Politică Confidențialitate</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Salinas Construct SRL. <span data-lang-key="footer.rights">Toate drepturile rezervate.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeServiceModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
