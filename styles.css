@@ -436,7 +436,9 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    background: linear-gradient(135deg, rgba(26,26,26,0.88) 0%, rgba(51,51,51,0.85) 100%), url('assets/photos/finisaje-after/dormitoare/img_035.jpeg');
+    background-size: cover;
+    background-position: center;
     color: var(--text-light);
     margin-top: 0;
     overflow: hidden;
@@ -821,6 +823,8 @@ section {
     height: 400px;
     border-radius: 1rem;
     box-shadow: var(--shadow-lg);
+    object-fit: cover;
+    display: block;
 }
 
 .team-section {
@@ -943,6 +947,9 @@ section {
 .blog-image {
     width: 100%;
     height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.75rem 0.75rem 0 0;
 }
 
 .blog-content {
@@ -1465,10 +1472,13 @@ section {
 }
 
 .modal-image {
+    width: 100%;
     height: 200px;
     border-radius: 0.75rem;
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    object-fit: cover;
+    display: block;
 }
 
 .modal-details h3 {

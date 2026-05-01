@@ -397,6 +397,11 @@ window.addEventListener('scroll', () => {
 // Service Modal Data
 const serviceData = {
     renovation: {
+        images: [
+            { src: 'assets/photos/finisaje-after/dormitoare/img_025.jpeg', alt: 'Dormitor finalizat cu candelabru modern și dulapuri integrate' },
+            { src: 'assets/photos/finisaje-after/coridoare/img_001.jpeg', alt: 'Coridor renovat cu mozaic premium și profile decorative' },
+            { src: 'assets/photos/santier/img_080.jpeg', alt: 'Lucrări în desfășurare - pregătire structură și planșeu' }
+        ],
         ro: {
             title: 'Renovări și Modernizări',
             subtitle: 'Transformăm spații vechi în locuințe moderne și funcționale',
@@ -429,6 +434,11 @@ const serviceData = {
         }
     },
     interior: {
+        images: [
+            { src: 'assets/photos/finisaje-after/bucatarii/img_015.jpeg', alt: 'Bucătărie modernă cu electrocasnice Bosch și blat de lemn' },
+            { src: 'assets/photos/finisaje-after/bai/img_006.jpeg', alt: 'Baie modernă cu oglindă LED și faianță bicromă' },
+            { src: 'assets/photos/finisaje-after/dressinguri/img_045.jpeg', alt: 'Dressing alb cu iluminat LED și parchet mozaic' }
+        ],
         ro: {
             title: 'Finisaje Interioare Premium',
             subtitle: 'Finisaje de calitate superioară pentru orice tip de spațiu',
@@ -461,6 +471,11 @@ const serviceData = {
         }
     },
     electrical: {
+        images: [
+            { src: 'assets/photos/santier/img_085.jpeg', alt: 'Canale de cabluri electrice în pereți de rigips' },
+            { src: 'assets/photos/before-demolari/img_095.jpeg', alt: 'Instalație electrică expusă în fază de reconstrucție' },
+            { src: 'assets/photos/santier/img_065.jpeg', alt: 'Pregătire instalații și finisaje în cameră' }
+        ],
         ro: {
             title: 'Instalații Electrice Certificate',
             subtitle: 'Siguranță și eficiență pentru sistemele electrice',
@@ -493,6 +508,11 @@ const serviceData = {
         }
     },
     plumbing: {
+        images: [
+            { src: 'assets/photos/santier/img_094.jpeg', alt: 'Centrală termică montată pe perete decopertat' },
+            { src: 'assets/photos/before-demolari/img_095.jpeg', alt: 'Baie în proces de renovare - instalații sanitare noi' },
+            { src: 'assets/photos/finisaje-after/bai/img_005.jpeg', alt: 'Baie finalizată cu faianță premium și oglindă LED' }
+        ],
         ro: {
             title: 'Instalații Sanitare Complete',
             subtitle: 'Sisteme sanitare eficiente și durabile',
@@ -525,6 +545,7 @@ const serviceData = {
         }
     },
     roofing: {
+        images: [],
         ro: {
             title: 'Instalații Acoperiș',
             subtitle: 'Protecție completă pentru locuința dumneavoastră',
@@ -557,6 +578,11 @@ const serviceData = {
         }
     },
     furniture: {
+        images: [
+            { src: 'assets/photos/finisaje-after/dressinguri/img_045.jpeg', alt: 'Dressing la comandă cu iluminat LED și rafturi personalizate' },
+            { src: 'assets/photos/finisaje-after/dormitoare/img_030.jpeg', alt: 'Mobilier living integrat cu TV și bibliotecă iluminată' },
+            { src: 'assets/photos/finisaje-after/bucatarii/img_015.jpeg', alt: 'Bucătărie la comandă cu electrocasnice încastrate' }
+        ],
         ro: {
             title: 'Design Interior & Mobilier la Comandă',
             subtitle: 'Amenajări personalizate pentru fiecare spațiu',
@@ -599,6 +625,29 @@ function openServiceModal(serviceType) {
 
     if (!data) return;
 
+    // Build modal images
+    const serviceImages = serviceData[serviceType].images || [];
+    let imagesHtml = '';
+    if (serviceImages.length > 0) {
+        imagesHtml = serviceImages.map((img, i) => `
+            <img class="modal-image" src="${img.src}" alt="${img.alt}" loading="lazy">
+        `).join('');
+    } else {
+        // Fallback placeholders for services without photos
+        imagesHtml = [1, 2, 3].map(i => `
+            <div class="modal-image placeholder">
+                <div class="placeholder-text">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                    <span>${lang === 'ro' ? 'Imagine Serviciu ' + i : 'Service Image ' + i}</span>
+                </div>
+            </div>
+        `).join('');
+    }
+
     // Create modal content
     const content = `
         <div class="modal-header">
@@ -606,36 +655,7 @@ function openServiceModal(serviceType) {
             <p>${data.subtitle}</p>
         </div>
         <div class="modal-images">
-            <div class="modal-image placeholder">
-                <div class="placeholder-text">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                        <polyline points="21 15 16 10 5 21"></polyline>
-                    </svg>
-                    <span>${lang === 'ro' ? 'Imagine Serviciu 1' : 'Service Image 1'}</span>
-                </div>
-            </div>
-            <div class="modal-image placeholder">
-                <div class="placeholder-text">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                        <polyline points="21 15 16 10 5 21"></polyline>
-                    </svg>
-                    <span>${lang === 'ro' ? 'Imagine Serviciu 2' : 'Service Image 2'}</span>
-                </div>
-            </div>
-            <div class="modal-image placeholder">
-                <div class="placeholder-text">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                        <polyline points="21 15 16 10 5 21"></polyline>
-                    </svg>
-                    <span>${lang === 'ro' ? 'Imagine Serviciu 3' : 'Service Image 3'}</span>
-                </div>
-            </div>
+            ${imagesHtml}
         </div>
         <div class="modal-details">
             <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem;">${data.description}</p>
